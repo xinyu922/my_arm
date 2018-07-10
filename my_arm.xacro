@@ -23,23 +23,23 @@
 
     <!-- link1 properties -->
     <xacro:property name="link1_width" value="0.03" />
-    <xacro:property name="link1_len" value="0.10" />
+    <xacro:property name="link1_len" value="0.080" />
 
     <!-- link2 properties -->
     <xacro:property name="link2_width" value="0.03" />
-    <xacro:property name="link2_len" value="0.14" />
+    <xacro:property name="link2_len" value="0.185" />
 
     <!-- link3 properties -->
     <xacro:property name="link3_width" value="0.03" />
-    <xacro:property name="link3_len" value="0.22" />
+    <xacro:property name="link3_len" value="0.14" />
 
     <!-- link4 properties -->
     <xacro:property name="link4_width" value="0.025" />
-    <xacro:property name="link4_len" value="0.06" />
+    <xacro:property name="link4_len" value="0.065" />
 
     <!-- link5 properties -->
-    <xacro:property name="link5_width" value="0.03" />
-    <xacro:property name="link5_len" value="0.06" />
+    <xacro:property name="link5_width" value="0.04" />
+    <xacro:property name="link5_len" value="0.02" />
 
     <!-- link6 properties -->
     <xacro:property name="link6_width" value="0.04" />
@@ -228,14 +228,14 @@
     <!-- //////////////////////////////////   LINK5  ///////////////////////////////////////////////// -->
     <link name="link5">
         <visual>
-            <origin xyz="0 0 ${link4_len/2}" rpy="0 0 0" />
+            <origin xyz="0 0 ${link5_len/2}" rpy="0 0 0" />
             <geometry>
                 <cylinder radius="${link5_width}" length="${link5_len}"/>
             </geometry>
             <material name="White" />
         </visual>
         <collision>
-            <origin xyz="0 0 ${link4_len/2} " rpy="0 0 0" />
+            <origin xyz="0 0 ${link5_len/2} " rpy="0 0 0" />
             <geometry>
                 <cylinder radius="${link5_width}" length="${link5_len}"/>
             </geometry>
@@ -246,7 +246,7 @@
     <joint name="joint6" type="fixed">
         <parent link="link5"/>
         <child link="link6"/>
-        <origin xyz="0 0 ${link4_len}" rpy="${1.5*M_PI} -${M_PI/2} 0" />
+        <origin xyz="0 0 ${link5_len}" rpy="${1.5*M_PI} -${M_PI/2} 0" />
         <axis xyz="1 0 0" />
         <limit effort="300" velocity="1" lower="-6.28" upper="6.28" />
         <dynamics damping="50" friction="1"/>
